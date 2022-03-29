@@ -1,0 +1,13 @@
+//
+//  UAT.xcconfig
+//  Market Place
+//
+//  Created by Vinsi on 09/12/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+SCROBBLER_BASE_URL = ws.audioscrobbler.com
+SCROBBLER_TOKEN = 7ac604d3ca628eb9e3746c61f5620da5
+DEFAULT_TIMEZONE = Europe/London
+

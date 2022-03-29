@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Configuration</key>
+	<dict>
+		<key>SCROBBLER_TOKEN</key>
+		<string>$(SCROBBLER_TOKEN)</string>
+		<key>SCROBBLER_BASE_URL</key>
+		<string>$(SCROBBLER_BASE_URL)</string>
+		<key>DEFAULT_TIMEZONE</key>
+		<string>$(DEFAULT_TIMEZONE)</string>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
