@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 enum APIVersion: String {
-    case v2 = "2.0"
+    case ver2 = "2.0"
 }
 
 protocol AudioScrobblerAPIType: APIBuilder {
@@ -34,9 +34,9 @@ extension AudioScrobblerAPIType {
 }
 
 private extension String {
-    
+
     enum QKeys: String {
-        
+
         case method
         case apiKey = "api_key"
         case format
@@ -52,14 +52,14 @@ private extension String {
 }
 
 enum AudioScrobblerAPI: AudioScrobblerAPIType {
-    
-    var version: APIVersion  { .v2 }
-    
+
+    var version: APIVersion { .ver2 }
+
     enum Method: String {
         case search = "album.search"
         case info = "album.getinfo"
     }
-    
+
     case search(album: String,
                  page: Int,
                  limit: Int)
@@ -69,7 +69,7 @@ enum AudioScrobblerAPI: AudioScrobblerAPIType {
               username: String? = nil,
               autocorrect: Bool? = nil,
               lang: String? = nil)
-   
+
     var query: [String: String] {
         guard let key = AppSettings().getValueAsString(key: .scrobblerToken) else {
             fatalError("empty token")
@@ -114,4 +114,3 @@ enum AudioScrobblerAPI: AudioScrobblerAPIType {
         return dictionary
     }
 }
-

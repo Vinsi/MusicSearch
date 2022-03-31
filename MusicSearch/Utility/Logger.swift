@@ -104,11 +104,17 @@ enum LoggerType {
 
     case network
     case custom(_ prefix: String)
+    case search
+    case detail
 
     var value: String {
         switch self {
         case .network:
             return "Network"
+        case .search:
+            return "Search"
+        case .detail:
+            return "Detail"
         case .custom(let prefix):
             return prefix
         }

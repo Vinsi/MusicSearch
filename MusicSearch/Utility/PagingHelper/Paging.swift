@@ -7,7 +7,9 @@
 
 protocol PageRequestable {
     associatedtype ContentType: PageContentType
-    func page(no: Int, contentCount: Int, onCompletion: @escaping (_ isSuccess: Bool,_ result: ContentType?) -> ())
+    func page(number: Int,
+              contentCount: Int,
+              onCompletion: @escaping (_ isSuccess: Bool, _ result: ContentType?) -> Void)
 }
 
 protocol PageContentType {
@@ -22,7 +24,7 @@ protocol PageManagable: AnyObject {
     var pageSize: Int { get }
     var currentPageNo: Int { get }
     func startFromBeginning()
-    func fetchNext(onCompletion: @escaping(_ isSuccess: Bool, _ result: ContentType?) -> ())
+    func fetchNext(onCompletion: @escaping(_ isSuccess: Bool, _ result: ContentType?) -> Void)
 }
 
 extension PageManagable {
@@ -42,8 +44,8 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
     private(set)var currentPageNo: Int
     private let firstPage: Int
     private let lastPage: Int?
-    
-    init(pageRequest: PageRequestType, firstPage: Int = 0 , contentCount: Int, lastPage: Int? = nil) {
+
+    init(pageRequest: PageRequestType, firstPage: Int = 0, contentCount: Int, lastPage: Int? = nil) {
         self.currentPageNo = firstPage
         self.firstPage = firstPage
         self.pageRequest = pageRequest
@@ -51,24 +53,24 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
         self.lastPage = lastPage
         self.contents = []
     }
-    
+
     func startFromBeginning() {
         isEndOfPage = false
         currentPageNo = firstPage
         contents = []
     }
-    
-    func fetchNext(onCompletion: @escaping (_ success: Bool, _ data: PageRequestType.ContentType?) -> ()) {
-        
+
+    func fetchNext(onCompletion: @escaping (_ success: Bool, _ data: PageRequestType.ContentType?) -> Void) {
+
         if !isEndOfPage, let lastPage = lastPage {
           isEndOfPage = currentPageNo > lastPage
         }
-        
+
         guard !isEndOfPage else {
             onCompletion(false, nil)
             return
         }
-        
+
         fetch { [weak self](success, result) in
             guard let self = self else {
                 onCompletion(false, nil)
@@ -76,20 +78,22 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
             }
             if success, let result = result {
                 self.lastResponse = result
-                self.isEndOfPage = self.checkIsEndOfPage(lastReponse: self.lastResponse, resultCount: result.content.count , pageSize: self.pageSize)
+                self.isEndOfPage = self.checkIsEndOfPage(lastReponse: self.lastResponse,
+                                                         resultCount: result.content.count,
+                                                         pageSize: self.pageSize)
                 self.contents.append(contentsOf: result.content)
                 self.currentPageNo += 1
                 onCompletion(success, result)
             }
         }
     }
-   
-    private func fetch( onCompletion: @escaping (_ isSuccess: Bool,_ result:ContentType?) -> ()) {
+
+    private func fetch( onCompletion: @escaping (_ isSuccess: Bool, _ result: ContentType?) -> Void) {
         guard isEndOfPage == false else {
             onCompletion(false, nil )
              return
         }
-        pageRequest.page(no: currentPageNo, contentCount: pageSize) { success, result in
+        pageRequest.page(number: currentPageNo, contentCount: pageSize) { success, result in
             guard let result = result else {
                 onCompletion(false, nil)
                 return
@@ -99,7 +103,7 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
     }
 
     func checkIsEndOfPage(lastReponse: PageRequestType.ContentType?, resultCount: Int, pageSize: Int ) -> Bool {
-        //MARK:- This function overridable in case need to change the endOfPage Logic
+        // MARK: - This function overridable in case need to change the endOfPage Logic
        return  resultCount < pageSize
     }
 }

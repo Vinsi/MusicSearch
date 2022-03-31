@@ -38,8 +38,12 @@
 		1501DEC627F0D51000949E23 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501DEC527F0D51000949E23 /* SearchResponseModel.swift */; };
 		1501DEC827F0D69800949E23 /* AlbumResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501DEC727F0D69800949E23 /* AlbumResponseModel.swift */; };
 		1501DECC27F0DD0500949E23 /* SearchPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501DECB27F0DD0500949E23 /* SearchPaging.swift */; };
+		1504232A27F46ADA00301C14 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504232927F46ADA00301C14 /* CellConfigurable.swift */; };
+		1504232C27F46B7E00301C14 /* UIResponder+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504232B27F46B7E00301C14 /* UIResponder+Helper.swift */; };
+		1504232E27F46C4E00301C14 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504232D27F46C4E00301C14 /* AvatarCell.swift */; };
+		1504233027F46CC000301C14 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504232F27F46CC000301C14 /* TrackCell.swift */; };
+		1504233227F4899400301C14 /* String+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504233127F4899400301C14 /* String+Encode.swift */; };
 		1584FF0027F1DB9D0058559D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FEFF27F1DB9D0058559D /* Coordinator.swift */; };
-		1584FF0327F1DC050058559D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF0227F1DC050058559D /* Router.swift */; };
 		1584FF0527F32D230058559D /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF0427F32D230058559D /* UIViewController+Helper.swift */; };
 		1584FF0A27F32F1B0058559D /* AlbumSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF0927F32F1B0058559D /* AlbumSearchViewModel.swift */; };
 		1584FF0C27F3702A0058559D /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF0B27F3702A0058559D /* Closures.swift */; };
@@ -50,6 +54,10 @@
 		1584FF1427F397EF0058559D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1584FF1327F397EF0058559D /* Kingfisher */; };
 		1584FF1627F399280058559D /* UIimageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF1527F399280058559D /* UIimageView+Helper.swift */; };
 		1584FF1927F3CE0B0058559D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1584FF1827F3CE0B0058559D /* DetailViewController.swift */; };
+		158ECF0B27F5B7F600B44371 /* UISearch+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ECF0A27F5B7F600B44371 /* UISearch+Helper.swift */; };
+		158ECF0D27F5F20200B44371 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ECF0C27F5F20200B44371 /* MainCoordinator.swift */; };
+		158ECF0F27F5F39000B44371 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ECF0E27F5F39000B44371 /* DetailCoordinator.swift */; };
+		158ECF1227F63B0A00B44371 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ECF1127F63B0A00B44371 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,14 +116,22 @@
 		1501DEC527F0D51000949E23 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
 		1501DEC727F0D69800949E23 /* AlbumResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResponseModel.swift; sourceTree = "<group>"; };
 		1501DECB27F0DD0500949E23 /* SearchPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPaging.swift; sourceTree = "<group>"; };
+		1504232927F46ADA00301C14 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		1504232B27F46B7E00301C14 /* UIResponder+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Helper.swift"; sourceTree = "<group>"; };
+		1504232D27F46C4E00301C14 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		1504232F27F46CC000301C14 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		1504233127F4899400301C14 /* String+Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encode.swift"; sourceTree = "<group>"; };
 		1584FEFF27F1DB9D0058559D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		1584FF0227F1DC050058559D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1584FF0427F32D230058559D /* UIViewController+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		1584FF0927F32F1B0058559D /* AlbumSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchViewModel.swift; sourceTree = "<group>"; };
 		1584FF0B27F3702A0058559D /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		1584FF1027F397260058559D /* AlbumListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCell.swift; sourceTree = "<group>"; };
 		1584FF1527F399280058559D /* UIimageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+Helper.swift"; sourceTree = "<group>"; };
 		1584FF1827F3CE0B0058559D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		158ECF0A27F5B7F600B44371 /* UISearch+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearch+Helper.swift"; sourceTree = "<group>"; };
+		158ECF0C27F5F20200B44371 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		158ECF0E27F5F39000B44371 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		158ECF1127F63B0A00B44371 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				1584FF0627F32EDE0058559D /* Scenes */,
-				1584FF0127F1DBF90058559D /* Router */,
-				1584FEFE27F1DB8B0058559D /* Coordinator */,
 				1501DECA27F0DCEA00949E23 /* PagingManager */,
 				1501DEC927F0DBFF00949E23 /* DataLayer */,
 				1501DEAF27F0C7DA00949E23 /* Configuration */,
@@ -205,6 +219,8 @@
 		1501DE9727F0C6EE00949E23 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				158ECF1827F63BE100B44371 /* PagingHelper */,
+				1504232827F46ABC00301C14 /* CellHelper */,
 				1501DEA027F0C7A900949E23 /* Alert+Helper.swift */,
 				1501DE9F27F0C7A900949E23 /* Combine+Helper.swift */,
 				1501DEA127F0C7A900949E23 /* Loader.swift */,
@@ -218,6 +234,9 @@
 				1501DE9E27F0C7A900949E23 /* Utility.swift */,
 				1584FF0B27F3702A0058559D /* Closures.swift */,
 				1584FF1527F399280058559D /* UIimageView+Helper.swift */,
+				1504232B27F46B7E00301C14 /* UIResponder+Helper.swift */,
+				1504233127F4899400301C14 /* String+Encode.swift */,
+				158ECF0A27F5B7F600B44371 /* UISearch+Helper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -283,31 +302,31 @@
 		1501DECA27F0DCEA00949E23 /* PagingManager */ = {
 			isa = PBXGroup;
 			children = (
-				1501DE9B27F0C7A900949E23 /* Paging.swift */,
 				1501DECB27F0DD0500949E23 /* SearchPaging.swift */,
 			);
 			path = PagingManager;
 			sourceTree = "<group>";
 		};
-		1584FEFE27F1DB8B0058559D /* Coordinator */ = {
+		1504232827F46ABC00301C14 /* CellHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1504232927F46ADA00301C14 /* CellConfigurable.swift */,
+			);
+			path = CellHelper;
+			sourceTree = "<group>";
+		};
+		1584FEFE27F1DB8B0058559D /* CoreCoordinator */ = {
 			isa = PBXGroup;
 			children = (
 				1584FEFF27F1DB9D0058559D /* Coordinator.swift */,
 			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		1584FF0127F1DBF90058559D /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				1584FF0227F1DC050058559D /* Router.swift */,
-			);
-			path = Router;
+			path = CoreCoordinator;
 			sourceTree = "<group>";
 		};
 		1584FF0627F32EDE0058559D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1584FEFE27F1DB8B0058559D /* CoreCoordinator */,
 				1584FF1727F3CDE80058559D /* Details */,
 				1584FF0727F32EE90058559D /* Search */,
 			);
@@ -317,9 +336,9 @@
 		1584FF0727F32EE90058559D /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				1501DE5727EE69D000949E23 /* AlbumSearchViewController.swift */,
-				1584FF0927F32F1B0058559D /* AlbumSearchViewModel.swift */,
-				1584FF1027F397260058559D /* AlbumListCell.swift */,
+				158ECF1727F63BB800B44371 /* ViewModel */,
+				158ECF1627F63B9900B44371 /* View */,
+				158ECF1527F63B9000B44371 /* Coordinator */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -327,9 +346,70 @@
 		1584FF1727F3CDE80058559D /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				1584FF1827F3CE0B0058559D /* DetailViewController.swift */,
+				158ECF1427F63B4F00B44371 /* Coordinator */,
+				158ECF1327F63B3000B44371 /* View */,
+				158ECF1027F63AE900B44371 /* ViewModel */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		158ECF1027F63AE900B44371 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				158ECF1127F63B0A00B44371 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		158ECF1327F63B3000B44371 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1504232D27F46C4E00301C14 /* AvatarCell.swift */,
+				1504232F27F46CC000301C14 /* TrackCell.swift */,
+				1584FF1827F3CE0B0058559D /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		158ECF1427F63B4F00B44371 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				158ECF0E27F5F39000B44371 /* DetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		158ECF1527F63B9000B44371 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				158ECF0C27F5F20200B44371 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		158ECF1627F63B9900B44371 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1584FF1027F397260058559D /* AlbumListCell.swift */,
+				1501DE5727EE69D000949E23 /* AlbumSearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		158ECF1727F63BB800B44371 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1584FF0927F32F1B0058559D /* AlbumSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		158ECF1827F63BE100B44371 /* PagingHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1501DE9B27F0C7A900949E23 /* Paging.swift */,
+			);
+			path = PagingHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,7 +566,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Ty pe a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Ty pe a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -499,16 +579,19 @@
 				1501DEAB27F0C7A900949E23 /* Alert+Helper.swift in Sources */,
 				1501DE5827EE69D000949E23 /* AlbumSearchViewController.swift in Sources */,
 				1501DEC327F0D26700949E23 /* AlbumRepository.swift in Sources */,
+				1504232A27F46ADA00301C14 /* CellConfigurable.swift in Sources */,
 				1501DEAC27F0C7A900949E23 /* Loader.swift in Sources */,
 				1501DEBA27F0C82200949E23 /* APIError.swift in Sources */,
 				1501DEA527F0C7A900949E23 /* LoaderImageView.swift in Sources */,
 				1584FF1927F3CE0B0058559D /* DetailViewController.swift in Sources */,
+				1504232E27F46C4E00301C14 /* AvatarCell.swift in Sources */,
+				158ECF0D27F5F20200B44371 /* MainCoordinator.swift in Sources */,
 				1501DEA927F0C7A900949E23 /* Utility.swift in Sources */,
+				1504233027F46CC000301C14 /* TrackCell.swift in Sources */,
 				1501DEC127F0D24400949E23 /* SearchRepository.swift in Sources */,
 				1501DECC27F0DD0500949E23 /* SearchPaging.swift in Sources */,
 				1501DEC827F0D69800949E23 /* AlbumResponseModel.swift in Sources */,
 				1501DE5427EE69D000949E23 /* AppDelegate.swift in Sources */,
-				1584FF0327F1DC050058559D /* Router.swift in Sources */,
 				1584FF0C27F3702A0058559D /* Closures.swift in Sources */,
 				1584FF0527F32D230058559D /* UIViewController+Helper.swift in Sources */,
 				1501DEB427F0C7F300949E23 /* AppConfiguration.swift in Sources */,
@@ -518,15 +601,20 @@
 				1501DEBE27F0C84E00949E23 /* AudioScrobblerAPI.swift in Sources */,
 				1501DEC627F0D51000949E23 /* SearchResponseModel.swift in Sources */,
 				1501DEA627F0C7A900949E23 /* Paging.swift in Sources */,
+				158ECF1227F63B0A00B44371 /* DetailViewModel.swift in Sources */,
 				1501DEAD27F0C7A900949E23 /* Logger.swift in Sources */,
 				1584FF1627F399280058559D /* UIimageView+Helper.swift in Sources */,
+				1504232C27F46B7E00301C14 /* UIResponder+Helper.swift in Sources */,
 				1501DE8427EE6CD800949E23 /* UIWindow+Start.swift in Sources */,
 				1501DEB927F0C82200949E23 /* APIBuilder.swift in Sources */,
+				158ECF0B27F5B7F600B44371 /* UISearch+Helper.swift in Sources */,
+				1504233227F4899400301C14 /* String+Encode.swift in Sources */,
 				1501DEA827F0C7A900949E23 /* StoryBoard+Helper.swift in Sources */,
 				1584FF0A27F32F1B0058559D /* AlbumSearchViewModel.swift in Sources */,
 				1584FF0027F1DB9D0058559D /* Coordinator.swift in Sources */,
 				1501DEAE27F0C7A900949E23 /* UIView+RoundedBorder.swift in Sources */,
 				1501DE5627EE69D000949E23 /* SceneDelegate.swift in Sources */,
+				158ECF0F27F5F39000B44371 /* DetailCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,7 +49,7 @@ extension APIBuilder {
     }
     var queryString: String {
         query.reduce("", {
-            "\($0)&\($1.key)=\($1.value)"
+            "\($0)&\($1.key)=\($1.value.encoded ?? "")"
         })
     }
 }

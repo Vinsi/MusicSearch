@@ -9,8 +9,8 @@ import UIKit
 import Combine
 
 fileprivate extension UISearchController {
-    
-    static func SearchController(
+
+    static func searchController(
         delegate: UISearchResultsUpdating
     ) -> UISearchController {
         let searchController = UISearchController()
@@ -21,69 +21,61 @@ fileprivate extension UISearchController {
 }
 
 final class AlbumSearchViewController: UITableViewController, StoryBoardInitializable {
-    
+
     static var appStoryBoardIdentifier: UIStoryboard.Storyboard = .main
-    lazy var loader: LoaderType = Loader(view: self.view)
     private let cancelBag = CancelBag()
-    private(set) var viewModel: AlbumSearchViewModel? = AlbumSearchViewModel(searchRepo: SearchRepository())
-    
-    lazy var searchController = UISearchController.SearchController(delegate: self)
-    
+    private(set) var viewModel: AlbumSearchViewModel = AlbumSearchViewModel(searchRepo: SearchRepository())
+    var parentCoordinator: MainCoordinator?
+    lazy var searchController = UISearchController.searchController(delegate: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchUI()
-        viewModel?.loader.receive(on: DispatchQueue.main)
+        viewModel.loader.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
-            if $0 {
-                self?.loader.show()
-            } else {
-                self?.loader.hide()
-            }
+                self?.searchController.searchBar.isLoading = $0
             }).store(in: cancelBag)
-        viewModel?.needReload
+        viewModel.needReload
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] _ in
                 self?.tableView.reloadData()
             }).store(in: cancelBag)
-    
+        viewModel.navigateToDetail.sink { [weak self] in
+            self?.parentCoordinator?.showDetail(name: $0.name,
+                                                artist: $0.artist,
+                                                mbid: $0.mbid)
+        }.store(in: cancelBag)
+
     }
-    
+
     private func setupSearchUI() {
         definesPresentationContext = true
         navigationItem.searchController = searchController
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumListCell.identifier, for: indexPath)
-        if let cell = cell as? AlbumListCell,
-           let data = viewModel?.search(at: indexPath.row) {
-            cell.configure(artist: data.artist,
-                           streamable: data.streamable == "1",
-                           name: data.name,
-                           link: data.url,
-                           image: data.image?.getImage(size: .medium)?.text)
-        
-        }
-        return cell
+        viewModel.item(at: indexPath.row).getCell(for: tableView, cellForRowAt: indexPath)
     }
-    
+
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
-            viewModel?.onMoreResult()
-        }
+        viewModel.onScroll(position: scrollView.contentOffset.y,
+                            contentHeight: tableView.contentSize.height,
+                            frameHeight: scrollView.frame.size.height)
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.searchCount ?? 0
+        viewModel.searchCount
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.onSelect(index: indexPath.row)
     }
 
 }
 
 extension AlbumSearchViewController: UISearchResultsUpdating {
-    
+
     func updateSearchResults(for searchController: UISearchController) {
-        viewModel?.keyword.send(searchController.searchBar.text ?? "")
+        viewModel.search(text: searchController.searchBar.text)
     }
 }
-

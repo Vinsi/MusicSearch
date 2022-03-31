@@ -8,16 +8,15 @@
 import UIKit
 
 extension UIViewController {
-    
-    func embeddedInNavigationController() -> Self {
+
+    func embeddedInNavigationController(_ nvc: UINavigationController) -> Self {
         Self.embedInNavigationController(vwc: self)
     }
-    
-    static func embedInNavigationController<T:UIViewController>(vwc view: T) -> T {
+
+    static func embedInNavigationController<T: UIViewController>(vwc view: T) -> T {
         let navController = UINavigationController(rootViewController: view)
         navController.modalPresentationStyle = .fullScreen
         return view
     }
+
 }
-
-

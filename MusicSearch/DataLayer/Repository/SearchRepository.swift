@@ -8,11 +8,11 @@
 import Combine
 
 protocol SearchRepositoryType {
-    func search(keyword: String , pageNo: Int, limit: Int) -> AnyPublisher<SearchResponseModel, APIError>
+    func search(keyword: String, pageNo: Int, limit: Int) -> AnyPublisher<SearchResponseModel, APIError>
 }
 
 struct SearchRepository: SearchRepositoryType, WebService {
-    
+
     func search(keyword: String, pageNo: Int, limit: Int = 20) -> AnyPublisher<SearchResponseModel, APIError> {
         request(from: AudioScrobblerAPI.search(album: keyword, page: pageNo, limit: limit))
     }

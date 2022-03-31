@@ -10,10 +10,6 @@ extension UIView {
     class func fromNib() -> Self? {
         return Bundle(for: Self.self).loadNibNamed(String(describing: Self.self), owner: nil, options: nil)?[0] as? Self
     }
-    
-    class func mainWindow() -> UIView? {
-        UIApplication.shared.windows.first
-    }
 }
 
 struct EdgeInsets {
@@ -26,11 +22,11 @@ struct EdgeInsets {
     let left: CGFloat?
     let bottom: CGFloat?
     let right: CGFloat?
-    
+
     static func all(_ value: CGFloat) -> EdgeInsets {
         EdgeInsets(value, value, value, value)
     }
-    
+
     init(_ top: CGFloat? = nil,
          _ left: CGFloat? = nil,
          _ bottom: CGFloat? = nil,
@@ -44,7 +40,7 @@ struct EdgeInsets {
 }
 
 extension UIView {
-    
+
     func pinEdge(toParent parentView: UIView,
                  edge: EdgeInsets? = .zero,
                  height: CGFloat? = nil,

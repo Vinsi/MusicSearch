@@ -10,8 +10,11 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    
+
     var imageUrl: String? {
+        get {
+            nil
+        }
         set {
             guard let value = newValue,
                 let url = URL(string: value) else {
@@ -19,9 +22,7 @@ extension UIImageView {
             }
             kf.setImage(with: url)
         }
-        get {
-            nil
-        }
+
     }
-    
+
 }

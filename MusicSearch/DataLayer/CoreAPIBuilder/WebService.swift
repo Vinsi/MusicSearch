@@ -14,7 +14,7 @@ protocol DecoderType {
 }
 
 extension JSONDecoder: DecoderType {
-    
+
     func decode<R: Decodable> (data: Data, for type: R.Type) -> AnyPublisher<R, APIError> {
         let jsonDecoder = JSONDecoder()
         return Just(data)
@@ -26,7 +26,7 @@ extension JSONDecoder: DecoderType {
 }
 
 extension JSONSerialization: DecoderType {
-    
+
     func decode<R: Decodable> (data: Data, for type: R.Type) -> AnyPublisher<R, APIError> {
         return Future<R, APIError> { promise in
             do {
@@ -44,7 +44,7 @@ extension JSONSerialization: DecoderType {
 }
 
 extension WebService {
-    
+
     func request<T: APIBuilder, R: Decodable>(from endpoint: T,
                                               decoder: DecoderType = JSONDecoder()) -> AnyPublisher<R, APIError> {
         do {

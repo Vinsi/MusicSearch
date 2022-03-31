@@ -8,13 +8,6 @@
 import Foundation
 import UIKit
 
-extension UIResponder {
-
-    static var identifier: String {
-        return "\(self)"
-    }
-}
-
 extension DateFormatter {
     fileprivate static let shared = { () -> DateFormatter in
         let dateFormatter =  DateFormatter()
@@ -41,7 +34,7 @@ extension Int {
 }
 
 extension Date {
-    
+
     enum APPDateFormat: String {
         case appDisplay = "MMM d, h:mm a"
         case withMicroSecond = "yyyy-MM-dd'T'HH:mm:ss.S'Z'"
@@ -53,7 +46,7 @@ extension Date {
         DateFormatter.shared.dateFormat = format.rawValue
         return DateFormatter.shared.string(from: self)
     }
-    
+
     init?(date: String, format: APPDateFormat) {
         DateFormatter.shared.dateFormat = format.rawValue
         guard let date = DateFormatter.shared.date(from: date) else {

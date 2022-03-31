@@ -5,13 +5,15 @@
 //  Created by Vinsi on 25/03/2022.
 //
 
-
 import UIKit
 
 extension UIWindow {
 
     private func createNewRootViewController () -> UIViewController? {
-        AlbumSearchViewController.newInstance().embeddedInNavigationController().navigationController
+        let navigationController = UINavigationController()
+        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        mainCoordinator.start()
+        return navigationController
     }
     static func createWindow(using scene: UIScene) -> UIWindow {
         guard let windowScene = (scene as? UIWindowScene) else {

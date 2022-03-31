@@ -39,7 +39,7 @@ enum AppConfigurableError: Swift.Error {
 
 extension AppConfigurable {
     var configurationKey: String { "Configuration" }
-    
+
     func value<T>(for key: String) throws -> T where T: LosslessStringConvertible {
         guard let configuration = bundle.object(forInfoDictionaryKey: configurationKey) as? [String: Any],
               let object = configuration[key] else {
@@ -55,14 +55,14 @@ extension AppConfigurable {
             throw AppConfigurableError.invalidValue
         }
     }
-    
+
     func getValue<T>(for key: Environment.Keys) throws -> T where T: LosslessStringConvertible {
         try value(for: key.rawValue)
     }
 }
 
 extension Environment {
-    
+
     enum Keys: String {
         case audioScrobblerBaseURL = "SCROBBLER_BASE_URL"
         case scrobblerToken = "SCROBBLER_TOKEN"
