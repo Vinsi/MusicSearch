@@ -17,11 +17,10 @@ final class AlbumSearchViewModel {
     let needReload: PassthroughSubject<Bool, Never> = .init()
     let keyword: CurrentValueSubject<String, Never> = .init("")
     let logger = Logger(.search)
-    let navigateToDetail: PassthroughSubject<(name: String?,
-                                              artist: String?,
-                                              mbid: String?), Never> = .init()
-    private lazy var pagingManager: PagingManager<SearchPageRequest> =  PagingManager<SearchPageRequest>(pageRequest: .init(keyword: keyword.value,
-                                                             repo: searchRepo),
+    let navigateToDetail: PassthroughSubject<SearchType, Never> = .init()
+    private lazy var pagingManager: PagingManager<SearchPageRequest> = .init(pageRequest:
+                                                                                    .init(keyword: keyword.value,
+                                                                                          repo: searchRepo),
                                                               firstPage: 1,
                                                             contentCount: pageSize)
     private let cancelBag = CancelBag()
@@ -29,7 +28,7 @@ final class AlbumSearchViewModel {
     private func bindKeyword() {
         keyword
             .filter({
-                Logger(.search).log("gota \($0)")
+                Logger(.search).log("keyword:- \($0)")
                 return !$0.isEmpty
             })
             .debounce(for: debounceTimeInterval, scheduler: DispatchQueue.main)
@@ -92,7 +91,10 @@ final class AlbumSearchViewModel {
 
     func onSelect(index: Int) {
         let content = pagingManager.contents[index]
-        navigateToDetail.send((name: content.name, artist: content.artist, mbid: content.mbd))
+        let param = DetailParameter(album: content.album,
+                                    mbID: content.mbID,
+                                    artist: content.artist)
+        navigateToDetail.send(param)
     }
 
     func search(text: String?) {
@@ -108,7 +110,7 @@ extension SearchResponseModel.Album: AlbumListDataType {
         name
     }
 
-    var mbd: String? {
+    var mbID: String? {
         mbid
     }
 

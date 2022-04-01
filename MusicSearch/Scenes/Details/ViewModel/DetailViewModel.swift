@@ -18,23 +18,27 @@ private extension Int {
 }
 
 final class DetailViewModel {
-
-    var repo: AlbumRepositoryType = AlbumRepository()
-    var cells: CurrentValueSubject<[CellConfigurable], Never> = .init([])
-    var errorMessage: PassthroughSubject<String, Never> = .init()
-    let loader: CurrentValueSubject<Bool, Never> = .init(false)
+    // exposed Properties
     var search: SearchType?
-    let cancelBag = CancelBag()
-    let errorMessageNoData = "No Album found"
+    let cells: CurrentValueSubject<[CellConfigurable], Never> = .init([])
+    let errorMessage: PassthroughSubject<String, Never> = .init()
+    let loader: CurrentValueSubject<Bool, Never> = .init(false)
+    // private
+    private let repo: AlbumRepositoryType
+    private let cancelBag = CancelBag()
+    private let errorMessageNoData = "No Album found" // can use localization
+    init(repo: AlbumRepositoryType = AlbumRepository()) {
+        self.repo = repo
+    }
     func fetch() {
         let params = """
 "fetch started..with-
  \(search?.album ?? "")
  \(search?.artist ?? "")
- \(search?.mbd ?? "" )
+ \(search?.mbID ?? "" )
 """
         Logger(.detail).log(params)
-        repo.info(album: search?.album, artist: search?.artist, mbid: search?.mbd)
+        repo.info(album: search?.album, artist: search?.artist, mbid: search?.mbID)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 Logger(.detail).log("fetch completed")
