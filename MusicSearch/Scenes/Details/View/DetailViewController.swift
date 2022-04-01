@@ -12,7 +12,7 @@ protocol SearchType {
 
     var album: String? { get }
     var artist: String? { get }
-    var mbd: String? { get }
+    var mbID: String? { get }
 }
 
 final class DetailViewController: UITableViewController, StoryBoardInitializable {
@@ -22,7 +22,7 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
     private struct Search: SearchType {
         var album: String?
         var artist: String?
-        var mbd: String?
+        var mbID: String?
     }
 
     private(set) var viewModel = DetailViewModel()

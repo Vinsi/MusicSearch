@@ -25,11 +25,10 @@ final class Logger {
         let rawValue: Int
         static let funcName = Attributes(rawValue: 1 << 0)
         static let prefix = Attributes(rawValue: 1 << 1)
-        static let dateStamp = Attributes(rawValue: 1 << 2)
         static let flag = Attributes(rawValue: 1 << 3)
         static let status = Attributes(rawValue: 1 << 4)
         static let common: Attributes = [.flag, .prefix, .status]
-        static let commonWithdate: Attributes = [.flag, .prefix, .status, .dateStamp]
+        static let commonWithdate: Attributes = [.flag, .prefix, .status]
     }
     private let loggingSystem: LoggingSystemType
     private let prefixWord: String
@@ -88,9 +87,6 @@ final class Logger {
         }
         if attributes.contains(.status) {
             prefix.append(type.value)
-        }
-        if attributes.contains(.dateStamp) {
-            prefix.append("\(Date().toString(format: .logFormat))")
         }
         if attributes.contains(.funcName) {
             prefix.append("\(funcname)")

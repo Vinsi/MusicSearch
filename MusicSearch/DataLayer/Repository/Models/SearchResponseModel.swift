@@ -21,7 +21,7 @@ extension SearchResponseModel {
         let albumMatches: AlbumMatches?
         let attr: Attr?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
             case opensearchQuery = "opensearch:Query"
             case opensearchTotalResults = "opensearch:totalResults"
             case opensearchStartIndex = "opensearch:startIndex"
@@ -46,7 +46,7 @@ extension SearchResponseModel {
         let text: String?
         let size: Size?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
             case text = "#text"
             case size
         }
@@ -62,14 +62,14 @@ extension SearchResponseModel {
     struct Attr: Codable {
         let attrFor: String?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
             case attrFor = "for"
         }
     }
 
     struct OpenSearchQuery: Codable {
         let text, role, searchTerms, startPage: String?
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {   // swiftlint:disable:this nesting
             case text = "#text"
             case role, searchTerms, startPage
         }

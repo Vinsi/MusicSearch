@@ -38,7 +38,7 @@
                ReferencedContainer = "container:MusicSearch.xcodeproj">
             </BuildableReference>
             <LocationScenarioReference
-               identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+               identifier = "London, England"
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
@@ -74,6 +74,13 @@
             ReferencedContainer = "container:MusicSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <LocationScenarioReference
          identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
          referenceType = "1">

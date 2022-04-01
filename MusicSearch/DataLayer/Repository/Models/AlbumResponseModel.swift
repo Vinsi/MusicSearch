@@ -32,7 +32,7 @@ extension AlbumResponseModel {
         let size: String?
         let text: String?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
 
             case size
             case text = "#text"
@@ -64,7 +64,7 @@ extension AlbumResponseModel {
         let attr: Attr?
         let artist: Artist?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
             case streamable, duration, url, name
             case attr = "@attr"
             case artist
@@ -89,7 +89,7 @@ extension AlbumResponseModel {
 
         let fulltrack, text: String?
 
-        enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {  // swiftlint:disable:this nesting
             case fulltrack
             case text = "#text"
         }

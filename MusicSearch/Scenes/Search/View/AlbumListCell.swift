@@ -25,7 +25,7 @@ struct AlbumListModel: AlbumListDataType, CellRepresentableModel {
     var link: String?
     var thumbImage: String?
     var album: String?
-    var mbd: String?
+    var mbID: String?
 
     func configure(cell: AlbumListCell, index: IndexPath) {
         cell.configure(data: self)

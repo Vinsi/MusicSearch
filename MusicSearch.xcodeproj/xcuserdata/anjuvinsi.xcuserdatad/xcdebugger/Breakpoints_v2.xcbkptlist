@@ -226,38 +226,6 @@
             endingLineNumber = "46"
             landmarkName = "addToView()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "15D7ECD1-8991-422C-B2D4-BC74263B10FC - 18434ee9ea2ce9b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MusicSearch.Loader.show() -&gt; ()"
-                  moduleName = "MusicSearch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearch/Utility/Loader.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "15D7ECD1-8991-422C-B2D4-BC74263B10FC - 8668a2b35d7776de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in MusicSearch.DetailViewController.bindUI() -&gt; ()"
-                  moduleName = "MusicSearch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearch/Utility/Loader.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -432,6 +400,342 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "showDetail(name:artist:mbid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AEC7395-ED88-4F63-9962-700AC67CE061"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "testSearchRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC9055F7-731E-4B4E-981E-1433B19330B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "testSearchRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC9055F7-731E-4B4E-981E-1433B19330B8 - d684541bb8b6c4e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "FC9055F7-731E-4B4E-981E-1433B19330B8 - d684541bb8b6c4e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "384">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92147CCA-5871-4E5D-B110-E80BC7B51725"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testSearchRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "92147CCA-5871-4E5D-B110-E80BC7B51725 - d684541bb8b6c765"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "92147CCA-5871-4E5D-B110-E80BC7B51725 - d684541bb8b6c765"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "840">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC9D8B77-2B33-40B7-979E-C5AF79F42B51"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "testSearchRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DC9D8B77-2B33-40B7-979E-C5AF79F42B51 - b31b35b57abe59f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "500">
+               </Location>
+               <Location
+                  uuid = "DC9D8B77-2B33-40B7-979E-C5AF79F42B51 - b31b35b57abe59f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MusicSearchTests.MusicSearchRequestTest.testSearchRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "412">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55A455E2-732C-480B-9ABA-33DC03369A91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearch/Scenes/Search/ViewModel/AlbumSearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "search()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4588788B-1E1D-4301-AFAB-961DFFBD7906"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchRequestTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "testDetailRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4588788B-1E1D-4301-AFAB-961DFFBD7906 - e0fe319ef5e21ec3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testDetailRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchRequestTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "4588788B-1E1D-4301-AFAB-961DFFBD7906 - e0fe319ef5e21ec3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URLRequest) -&gt; () in MusicSearchTests.MusicSearchRequestTest.testDetailRequest() throws -&gt; ()"
+                  moduleName = "MusicSearchTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anjuvinsi/Documents/GitHub/MusicSearch/MusicSearchTests/MusicSearchRequestTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BA1F79E-D322-4D94-8747-3860F5AA1DC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MusicSearchTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "testSearch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "799E9B51-4AC0-49F9-BBBA-F1DB4A00DA05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearch/Scenes/Search/ViewModel/AlbumSearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "search()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A74B8C1B-9832-40DB-A572-7CEDAE0C56A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MockHelper/MockResponseBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "jsonData(_:status:headers:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C96AE7DE-8854-46D8-876C-6C6E6B13F7BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearchTests/MockHelper/MockResponseBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "jsonResponseFromFile(file:status:headers:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A99E477D-7124-458A-B524-7E7B9416DDDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearch/Scenes/Details/ViewModel/DetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FD7993E-D48C-46CF-AE05-0F4348F77A01"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearch/Scenes/Details/ViewModel/DetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FF56E3A6-84C1-4230-8282-CB1CE92B917D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MusicSearch/Scenes/Details/ViewModel/DetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetch()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

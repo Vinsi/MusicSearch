@@ -15,7 +15,7 @@ extension SearchResponseModel: PageContentType {
                            link: $0.link,
                            thumbImage: $0.thumbImage,
                            album: $0.album,
-                           mbd: $0.mbd)
+                           mbID: $0.mbid)
         }) ?? []
     }
 }

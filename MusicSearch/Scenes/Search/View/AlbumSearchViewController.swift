@@ -41,9 +41,7 @@ final class AlbumSearchViewController: UITableViewController, StoryBoardInitiali
                 self?.tableView.reloadData()
             }).store(in: cancelBag)
         viewModel.navigateToDetail.sink { [weak self] in
-            self?.parentCoordinator?.showDetail(name: $0.name,
-                                                artist: $0.artist,
-                                                mbid: $0.mbid)
+            self?.parentCoordinator?.showDetail(name: $0.album, artist: $0.artist, mbid: $0.mbID)
         }.store(in: cancelBag)
 
     }
