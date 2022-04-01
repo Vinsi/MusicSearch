@@ -9,7 +9,7 @@ import UIKit
 
 final class TrackCell: UITableViewCell {
 
-    @IBOutlet fileprivate(set) weak var artistLabel, durationLabel, nameLabel: UILabel!
+    @IBOutlet private(set) weak var artistLabel, durationLabel, nameLabel: UILabel!
 }
 
 struct TrackCellModel: CellRepresentableModel {

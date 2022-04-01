@@ -26,8 +26,8 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
     }
 
     private(set) var viewModel = DetailViewModel()
-    let cancelBag = CancelBag()
-    lazy var loader = Loader(view: self.view)
+    private let cancelBag = CancelBag()
+    private lazy var loader = Loader(view: self.view)
     private func bindUI() {
         viewModel
             .loader
@@ -66,11 +66,5 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.cells.value.count
-    }
-
-    static func configure( with search: SearchType?) -> Self {
-        let controller = Self.newInstance()
-        controller.viewModel.search = search
-        return controller
     }
 }
