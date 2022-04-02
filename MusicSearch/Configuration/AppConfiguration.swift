@@ -12,9 +12,19 @@ enum Environment {
     // swiftlint:disable identifier_name
     case qa
     case prod
-    var isDebug: Bool {
-        self != .prod
-    }
+    static var isProduction: Bool = {
+        let dic = ProcessInfo.processInfo.environment
+        if let forceProduction = dic["forceProduction"], forceProduction == "true" {
+            return true
+        }
+#if PROD
+        return true
+#else
+        return false
+#endif
+
+    }()
+
     static var current: Environment {
 #if PROD
         return .prod

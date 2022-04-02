@@ -33,7 +33,7 @@ final class Logger {
     private let loggingSystem: LoggingSystemType
     private let prefixWord: String
     private let attributes: Attributes
-    private let isDebug = Environment.current.isDebug
+    private let isDebug = !Environment.isProduction
     init(_ word: LoggerType = .custom("##"),
          attributes: Attributes = [.flag, .prefix, .status],
          loggingSystem: LoggingSystemType = ConsoleLogger()) {

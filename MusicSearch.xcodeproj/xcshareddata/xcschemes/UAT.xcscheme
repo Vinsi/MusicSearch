@@ -80,6 +80,11 @@
             value = "disable"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "forceProduction"
+            value = "true"
+            isEnabled = "NO">
+         </EnvironmentVariable>
       </EnvironmentVariables>
       <LocationScenarioReference
          identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
