@@ -57,8 +57,8 @@ final class AlbumSearchViewController: UITableViewController, StoryBoardInitiali
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         viewModel.onScroll(position: scrollView.contentOffset.y,
-                            contentHeight: tableView.contentSize.height,
-                            frameHeight: scrollView.frame.size.height)
+                           contentHeight: tableView.contentSize.height,
+                           frameHeight: scrollView.frame.size.height)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

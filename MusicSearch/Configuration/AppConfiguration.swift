@@ -16,14 +16,14 @@ enum Environment {
         self != .prod
     }
     static var current: Environment {
-       #if PROD
-       return .prod
-       #elseif QA
-       return .qa
-       #else
-       return .uat
-       #endif
-   }
+#if PROD
+        return .prod
+#elseif QA
+        return .qa
+#else
+        return .uat
+#endif
+    }
 }
 
 protocol AppConfigurable {
@@ -43,8 +43,8 @@ extension AppConfigurable {
     func value<T>(for key: String) throws -> T where T: LosslessStringConvertible {
         guard let configuration = bundle.object(forInfoDictionaryKey: configurationKey) as? [String: Any],
               let object = configuration[key] else {
-            throw AppConfigurableError.missingKey
-        }
+                  throw AppConfigurableError.missingKey
+              }
         switch object {
         case let value as T:
             return value

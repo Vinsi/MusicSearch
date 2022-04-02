@@ -31,20 +31,20 @@ extension AlertType {
         message: String,
         buttons: [ActionButton],
         completion: ActionCallBack?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let dismissCallback = { [weak alert] in
-            alert?.dismiss(animated: true, completion: nil)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let dismissCallback = { [weak alert] in
+                alert?.dismiss(animated: true, completion: nil)
+            }
+            buttons.enumerated().forEach { (index, element) in
+                let action = UIAlertAction(title: element.text,
+                                           style: element.style,
+                                           handler: { _ in
+                    completion?(index, dismissCallback)
+                })
+                alert.addAction(action)
+            }
+            presenter.show(alertController: alert, animated: true, completion: nil)
         }
-        buttons.enumerated().forEach { (index, element) in
-            let action = UIAlertAction(title: element.text,
-                                       style: element.style,
-                                       handler: { _ in
-                                        completion?(index, dismissCallback)
-                                       })
-            alert.addAction(action)
-        }
-        presenter.show(alertController: alert, animated: true, completion: nil)
-    }
 }
 
 extension AlertType where Self: Presentable {

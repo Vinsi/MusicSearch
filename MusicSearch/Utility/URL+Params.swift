@@ -13,6 +13,6 @@ extension URL {
                 var prev = $0
                 prev[$1.name] = $1.value
                 return prev
-        }
+            }
     }
 }

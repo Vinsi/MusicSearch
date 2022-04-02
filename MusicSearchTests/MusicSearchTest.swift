@@ -17,7 +17,7 @@ class MusicSearchTest: XCTestCase {
     }
 
     func testSearch() throws {
-    let expectation: XCTestExpectation = .init(description: "testSearch")
+        let expectation: XCTestExpectation = .init(description: "testSearch")
         let keyword = "believe"
         let viewModel = AlbumSearchViewModel(searchRepo: SearchRepository())
         let cancelbag = CancelBag()

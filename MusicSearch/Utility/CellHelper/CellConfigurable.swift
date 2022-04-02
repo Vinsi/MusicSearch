@@ -20,8 +20,8 @@ extension CellFetchable where Self: CellConfigurable {
     func getCell(for tableView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
         var cell = UITableViewCell.init()
         if let instanceCell = tableView.dequeueReusableCell(withIdentifier: Cell.identifier) as? Cell {
-        configure(cell: instanceCell, index: indexPath)
-        cell = instanceCell
+            configure(cell: instanceCell, index: indexPath)
+            cell = instanceCell
         }
         return cell
     }

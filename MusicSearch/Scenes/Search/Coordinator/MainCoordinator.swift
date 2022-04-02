@@ -26,8 +26,8 @@ final class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelega
     func showDetail(name: String?, artist: String?, mbid: String?) {
         let childCoordinator = DetailCoordinator(navigationController: navigationController,
                                                  param: DetailParameter(album: name,
-                                                              mbID: mbid,
-                                                              artist: artist)
+                                                                        mbID: mbid,
+                                                                        artist: artist)
         )
         children.append(childCoordinator)
         childCoordinator.start()

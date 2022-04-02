@@ -21,8 +21,8 @@ final class AlbumSearchViewModel {
     private lazy var pagingManager: PagingManager<SearchPageRequest> = .init(pageRequest:
                                                                                     .init(keyword: keyword.value,
                                                                                           repo: searchRepo),
-                                                              firstPage: 1,
-                                                            contentCount: pageSize)
+                                                                             firstPage: 1,
+                                                                             contentCount: pageSize)
     private let cancelBag = CancelBag()
 
     private func bindKeyword() {
@@ -32,8 +32,8 @@ final class AlbumSearchViewModel {
                 return !$0.isEmpty
             })
             .debounce(for: debounceTimeInterval, scheduler: DispatchQueue.main)
-            .sink(receiveValue: { _ in
-                self.startSearch()
+            .sink(receiveValue: { [weak self] _ in
+                self?.startSearch()
             }).store(in: cancelBag )
     }
 
@@ -45,7 +45,7 @@ final class AlbumSearchViewModel {
     private func startSearch() {
         logger.log("started Search with:-\(keyword.value)")
         pagingManager = PagingManager<SearchPageRequest>(pageRequest: .init(keyword: keyword.value,
-                                                               repo: searchRepo),
+                                                                            repo: searchRepo),
                                                          firstPage: 1,
                                                          contentCount: pageSize)
         search()
@@ -71,8 +71,8 @@ final class AlbumSearchViewModel {
             return
         }
         if pagingManager.isEndOfPage == false {
-           logger.log("loadMoreStarted")
-           search()
+            logger.log("loadMoreStarted")
+            search()
         }
     }
 

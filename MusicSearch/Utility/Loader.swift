@@ -40,9 +40,9 @@ struct Loader: LoaderType {
 
     fileprivate func addToView() {
         guard let loader =  loader,
-        let view = view else {
-            return
-        }
+              let view = view else {
+                  return
+              }
         loader.pinEdge(toParent: view)
     }
 

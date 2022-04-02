@@ -33,8 +33,8 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
             .loader
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
-            $0 ? self?.loader.show(): self?.loader.hide()
-        }.store(in: cancelBag)
+                $0 ? self?.loader.show(): self?.loader.hide()
+            }.store(in: cancelBag)
         viewModel
             .cells
             .filter({!$0.isEmpty})

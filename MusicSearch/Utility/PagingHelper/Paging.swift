@@ -63,7 +63,7 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
     func fetchNext(onCompletion: @escaping (_ success: Bool, _ data: PageRequestType.ContentType?) -> Void) {
 
         if !isEndOfPage, let lastPage = lastPage {
-          isEndOfPage = currentPageNo > lastPage
+            isEndOfPage = currentPageNo > lastPage
         }
 
         guard !isEndOfPage else {
@@ -91,7 +91,7 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
     private func fetch( onCompletion: @escaping (_ isSuccess: Bool, _ result: ContentType?) -> Void) {
         guard isEndOfPage == false else {
             onCompletion(false, nil )
-             return
+            return
         }
         pageRequest.page(number: currentPageNo, contentCount: pageSize) { success, result in
             guard let result = result else {
@@ -104,6 +104,6 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
 
     func checkIsEndOfPage(lastReponse: PageRequestType.ContentType?, resultCount: Int, pageSize: Int ) -> Bool {
         // MARK: - This function overridable in case need to change the endOfPage Logic
-       return  resultCount < pageSize
+        return  resultCount < pageSize
     }
 }

@@ -19,7 +19,7 @@ let changeDefaultSessionConfiguration: Void = {
                                                                 #selector(getter: URLSessionConfiguration.ephemeral)),
        let mockEphemeralSessionConfiguration = class_getClassMethod(URLSessionConfiguration.self,
                                                                     #selector(URLSessionConfiguration
-                                                                                .swizzledEphemeralSessionConfiguration)) {
+                                                                                .swizzledEphemeralSessionConfiguration)) { // swiftlint:disable:this line_length
         method_exchangeImplementations(ephemeralSessionConfiguration, mockEphemeralSessionConfiguration)
     }
 }()

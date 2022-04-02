@@ -17,9 +17,9 @@ extension UIImageView {
         }
         set {
             guard let value = newValue,
-                let url = URL(string: value) else {
-                return
-            }
+                  let url = URL(string: value) else {
+                      return
+                  }
             kf.setImage(with: url)
         }
 

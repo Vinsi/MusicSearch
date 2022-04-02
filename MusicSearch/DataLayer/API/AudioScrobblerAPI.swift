@@ -25,7 +25,7 @@ extension AudioScrobblerAPIType {
         return url
     }
     func body() throws -> Data? {
-         nil
+        nil
     }
     var method: HttpMethod { .get }
     var path: String { version.rawValue }
@@ -61,8 +61,8 @@ enum AudioScrobblerAPI: AudioScrobblerAPIType {
     }
 
     case search(album: String,
-                 page: Int,
-                 limit: Int)
+                page: Int,
+                limit: Int)
     case info(artist: String? = nil,
               album: String? = nil,
               mbid: String? = nil,
