@@ -4,7 +4,7 @@ Hi Team Please the below notes .
 
 * How to setup
 
-  - Clone the master repo to your mac and run the project file
+  - Clone the 'main' branch repo to your mac and run the project file
 
 * App Features added
 
