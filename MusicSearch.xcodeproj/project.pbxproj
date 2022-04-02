@@ -208,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				1584FF0627F32EDE0058559D /* Scenes */,
-				1501DECA27F0DCEA00949E23 /* PagingManager */,
 				1501DEC927F0DBFF00949E23 /* DataLayer */,
 				1501DEAF27F0C7DA00949E23 /* Configuration */,
 				1501DE9727F0C6EE00949E23 /* Utility */,
@@ -326,14 +325,6 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
-		1501DECA27F0DCEA00949E23 /* PagingManager */ = {
-			isa = PBXGroup;
-			children = (
-				1501DECB27F0DD0500949E23 /* SearchPaging.swift */,
-			);
-			path = PagingManager;
-			sourceTree = "<group>";
-		};
 		1504232827F46ABC00301C14 /* CellHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +354,7 @@
 		1584FF0727F32EE90058559D /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				15EFD1DB27F8825300ED7BC2 /* Helper */,
 				158ECF1727F63BB800B44371 /* ViewModel */,
 				158ECF1627F63B9900B44371 /* View */,
 				158ECF1527F63B9000B44371 /* Coordinator */,
@@ -462,6 +454,14 @@
 				158ECF3327F6F80C00B44371 /* FileName.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		15EFD1DB27F8825300ED7BC2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1501DECB27F0DD0500949E23 /* SearchPaging.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
