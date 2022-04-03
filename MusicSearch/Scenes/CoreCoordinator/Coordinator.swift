@@ -22,3 +22,23 @@ extension Coordinator {
         }
     }
 }
+
+protocol Coordinatable {
+
+    associatedtype CoordinatorType: Coordinator
+    var coordinator: CoordinatorType? { get }
+}
+
+protocol CoordinatorFetchable {
+
+    func getCoordinator() -> Coordinator?
+}
+
+typealias CoordinatorViewController = Coordinatable & CoordinatorFetchable
+
+extension Coordinatable where Self: CoordinatorFetchable {
+
+    func getCoordinator() -> Coordinator? {
+        coordinator
+    }
+}

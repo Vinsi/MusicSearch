@@ -36,6 +36,7 @@ protocol APIBuilder {
 }
 
 extension APIBuilder {
+
     func urlRequest() throws -> URLRequest {
         let param = queryString
         let url = ["https:/", baseURL, path, subPath].compactMap({$0}).joined(separator: "/") +
@@ -47,6 +48,7 @@ extension APIBuilder {
         request.httpMethod = method.rawValue
         return request
     }
+
     var queryString: String {
         query.reduce("", {
             "\($0)&\($1.key)=\($1.value.encoded ?? "")"

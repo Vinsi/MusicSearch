@@ -16,6 +16,8 @@ extension StoryBoardInitializable where Self: UIViewController {
     static func newInstance() -> Self {
         UIStoryboard.init(storyboard: appStoryBoardIdentifier).instantiateViewController()
     }
+
+    static var appStoryBoardIdentifier: UIStoryboard.Storyboard { .main }
 }
 
 extension UIViewController {

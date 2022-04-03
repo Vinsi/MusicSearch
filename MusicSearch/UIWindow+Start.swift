@@ -9,12 +9,13 @@ import UIKit
 
 extension UIWindow {
 
-    private func createNewRootViewController () -> UIViewController? {
+    private func createNewRootViewController(coordinator: inout MainCoordinator?) -> UIViewController? {
         let navigationController = UINavigationController()
-        let mainCoordinator = MainCoordinator(navigationController: navigationController)
-        mainCoordinator.start()
+        coordinator = MainCoordinator(navigationController: navigationController)
+        coordinator?.start()
         return navigationController
     }
+
     static func createWindow(using scene: UIScene) -> UIWindow {
         guard let windowScene = (scene as? UIWindowScene) else {
             fatalError("Window cannot init")
@@ -23,11 +24,13 @@ extension UIWindow {
         window.windowScene = windowScene
         return window
     }
+
     static func createWindow() -> UIWindow {
         UIWindow(frame: UIScreen.main.bounds)
     }
-    @discardableResult func setupForDisplay() -> UIWindow {
-        rootViewController = createNewRootViewController()
+
+    @discardableResult func setupForDisplay(using coordinator: inout MainCoordinator?) -> UIWindow {
+        rootViewController = createNewRootViewController(coordinator: &coordinator)
         makeKeyAndVisible()
         return self
     }

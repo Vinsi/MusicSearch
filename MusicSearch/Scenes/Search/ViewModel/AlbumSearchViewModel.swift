@@ -27,9 +27,16 @@ final class AlbumSearchViewModel {
 
     private func bindKeyword() {
         keyword
-            .filter({
+            .filter({ [weak self] in
                 Logger(.search).log("keyword:- \($0)")
-                return !$0.isEmpty
+                if $0.isEmpty {
+                self?.pagingManager.removeAll()
+                self?.needReload.send(true)
+                self?.loader.send(false)
+                    return false
+                } else {
+                    return true
+                }
             })
             .debounce(for: debounceTimeInterval, scheduler: DispatchQueue.main)
             .sink(receiveValue: { [weak self] _ in
@@ -106,6 +113,7 @@ final class AlbumSearchViewModel {
 }
 
 extension SearchResponseModel.Album: AlbumListDataType {
+
     var album: String? {
         name
     }

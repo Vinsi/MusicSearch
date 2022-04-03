@@ -8,7 +8,7 @@ import UIKit
 
 final class AvatarCell: UITableViewCell {
 
-    @IBOutlet private(set) weak var albumImage: UIImageView!
+    @IBOutlet fileprivate private(set) weak var albumImage: UIImageView!
 }
 
 struct AvatarModel: CellRepresentableModel {

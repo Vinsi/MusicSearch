@@ -20,17 +20,20 @@ fileprivate extension UISearchController {
     }
 }
 
-final class AlbumSearchViewController: UITableViewController, StoryBoardInitializable {
+final class AlbumSearchViewController: UITableViewController, StoryBoardInitializable, CoordinatorViewController {
 
-    static var appStoryBoardIdentifier: UIStoryboard.Storyboard = .main
     private let cancelBag = CancelBag()
     private(set) var viewModel: AlbumSearchViewModel = AlbumSearchViewModel(searchRepo: SearchRepository())
-    var parentCoordinator: MainCoordinator?
+    var coordinator: MainCoordinator?
     lazy var searchController = UISearchController.searchController(delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchUI()
+        bindUI()
+    }
+
+    private func bindUI() {
         viewModel.loader.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 self?.searchController.searchBar.isLoading = $0
@@ -41,9 +44,8 @@ final class AlbumSearchViewController: UITableViewController, StoryBoardInitiali
                 self?.tableView.reloadData()
             }).store(in: cancelBag)
         viewModel.navigateToDetail.sink { [weak self] in
-            self?.parentCoordinator?.showDetail(name: $0.album, artist: $0.artist, mbid: $0.mbID)
+            self?.coordinator?.showDetail(name: $0.album, artist: $0.artist, mbid: $0.mbID)
         }.store(in: cancelBag)
-
     }
 
     private func setupSearchUI() {

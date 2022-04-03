@@ -15,10 +15,9 @@ protocol SearchType {
     var mbID: String? { get }
 }
 
-final class DetailViewController: UITableViewController, StoryBoardInitializable {
+final class DetailViewController: UITableViewController, StoryBoardInitializable, CoordinatorViewController {
 
-    static var appStoryBoardIdentifier: UIStoryboard.Storyboard = .main
-    weak var coordinator: Coordinator?
+    weak var coordinator: DetailCoordinator?
     private struct Search: SearchType {
         var album: String?
         var artist: String?
@@ -28,6 +27,13 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
     private(set) var viewModel = DetailViewModel()
     private let cancelBag = CancelBag()
     private lazy var loader = Loader(view: self.view)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindUI()
+        viewModel.fetch()
+    }
+
     private func bindUI() {
         viewModel
             .loader
@@ -52,12 +58,6 @@ final class DetailViewController: UITableViewController, StoryBoardInitializable
                     self?.navigationController?.popViewController(animated: true)
                 })
             }.store(in: cancelBag)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        bindUI()
-        viewModel.fetch()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

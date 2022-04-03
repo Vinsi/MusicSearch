@@ -6,20 +6,22 @@
 //
 import UIKit
 
-final class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
+final class MainCoordinator: NSObject, Coordinator {
 
     var children: [Coordinator] = []
 
     var navigationController: UINavigationController
-
+    private lazy var navListener = NavigationPopListener(self.navigationController)
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
 
     func start() {
         let albumSearch = AlbumSearchViewController.newInstance()
-        albumSearch.parentCoordinator = self
-        navigationController.delegate = self
+        albumSearch.coordinator = self
+        navListener.add(closure: { [weak self] in
+            self?.childDidFinish($0)
+        })
         navigationController.pushViewController(albumSearch, animated: false)
     }
 
@@ -31,6 +33,25 @@ final class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelega
         )
         children.append(childCoordinator)
         childCoordinator.start()
+    }
+
+}
+
+protocol NavListenerType {
+    func add(closure: @escaping GenericInClosure<Coordinator>)
+}
+
+final class NavigationPopListener: NSObject, UINavigationControllerDelegate, NavListenerType {
+
+    private var callBack: GenericInClosure<Coordinator>?
+
+    convenience init(_ navigationController: UINavigationController) {
+        self.init()
+        navigationController.delegate = self
+    }
+
+    func add(closure: @escaping GenericInClosure<Coordinator>) {
+        self.callBack = closure
     }
 
     func navigationController(_ navigationController: UINavigationController,
@@ -48,10 +69,11 @@ final class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelega
         }
 
         // We’re still here – it means we’re popping the view controller,
-        // so we can check whether it’s a buy view controller
-        if let detailVwc = fromViewController as? DetailViewController {
-            // We're popping a buy view controller; end its coordinator
-            childDidFinish(detailVwc.coordinator)
+        if let coordinated = fromViewController as? CoordinatorFetchable,
+           let coordinator = coordinated.getCoordinator() {
+            Logger(.search).log("Popped:-\(fromViewController)")
+            callBack?(coordinator)
         }
     }
+
 }

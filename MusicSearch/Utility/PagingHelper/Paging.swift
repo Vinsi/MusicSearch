@@ -36,16 +36,19 @@ extension PageManagable {
 final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
 
     typealias ContentType = PageRequestType.ContentType
-    var lastResponse: PageRequestType.ContentType?
-    var contents: [PageRequestType.ContentType.PageElement]
-    var pageRequest: PageRequestType
+    private(set)var lastResponse: PageRequestType.ContentType?
+    private(set)var contents: [PageRequestType.ContentType.PageElement]
+    private var pageRequest: PageRequestType
     private(set)var isEndOfPage: Bool = false
     private(set)var pageSize: Int
     private(set)var currentPageNo: Int
     private let firstPage: Int
     private let lastPage: Int?
 
-    init(pageRequest: PageRequestType, firstPage: Int = 0, contentCount: Int, lastPage: Int? = nil) {
+    init(pageRequest: PageRequestType,
+         firstPage: Int = 0,
+         contentCount: Int,
+         lastPage: Int? = nil) {
         self.currentPageNo = firstPage
         self.firstPage = firstPage
         self.pageRequest = pageRequest
@@ -60,6 +63,10 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
         contents = []
     }
 
+    func removeAll() {
+        contents.removeAll()
+    }
+
     func fetchNext(onCompletion: @escaping (_ success: Bool, _ data: PageRequestType.ContentType?) -> Void) {
 
         if !isEndOfPage, let lastPage = lastPage {
@@ -71,20 +78,23 @@ final class PagingManager<PageRequestType: PageRequestable>: PageManagable {
             return
         }
 
-        fetch { [weak self](success, result) in
+        fetch { [weak self] success, result in
             guard let self = self else {
                 onCompletion(false, nil)
                 return
             }
-            if success, let result = result {
-                self.lastResponse = result
-                self.isEndOfPage = self.checkIsEndOfPage(lastReponse: self.lastResponse,
+            guard success,
+                   let result = result else {
+                       onCompletion(false, nil)
+                       return
+            }
+            self.lastResponse = result
+            self.isEndOfPage = self.checkIsEndOfPage(lastReponse: self.lastResponse,
                                                          resultCount: result.content.count,
                                                          pageSize: self.pageSize)
-                self.contents.append(contentsOf: result.content)
-                self.currentPageNo += 1
-                onCompletion(success, result)
-            }
+            self.contents.append(contentsOf: result.content)
+            self.currentPageNo += 1
+            onCompletion(success, result)
         }
     }
 

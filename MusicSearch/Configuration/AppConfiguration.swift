@@ -48,6 +48,7 @@ enum AppConfigurableError: Swift.Error {
 }
 
 extension AppConfigurable {
+
     var configurationKey: String { "Configuration" }
 
     func value<T>(for key: String) throws -> T where T: LosslessStringConvertible {
@@ -81,8 +82,10 @@ extension Environment {
 }
 
 struct AppSettings: AppConfigurable {
+
     let logger = Logger(.custom("config"))
     var bundle: Bundle = .main
+
     func getValueAsString(key: Environment.Keys) -> String? {
         do {
             let stringValue: String = try getValue(for: key)

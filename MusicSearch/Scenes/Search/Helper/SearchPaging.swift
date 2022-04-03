@@ -21,12 +21,13 @@ extension SearchResponseModel: PageContentType {
 }
 
 struct SearchPageRequest: PageRequestable {
-    typealias ContentType = SearchResponseModel
 
+    typealias ContentType = SearchResponseModel
     let keyword: String
     private let cancelBag = CancelBag()
     let repo: SearchRepositoryType
-    private let logger = Logger()
+    private let logger = Logger(.custom("Paging"))
+
     func page(number: Int,
               contentCount: Int,
               onCompletion: @escaping (Bool, SearchResponseModel?) -> Void) {

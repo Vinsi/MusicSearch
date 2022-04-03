@@ -46,7 +46,6 @@ final class AlbumListCell: UITableViewCell {
     }
 
     func configure(data: AlbumListDataType) {
-
         artistLabel.text = data.artist
         streamableLabel.isHidden = !data.canStream
         nameLabel.text = data.name

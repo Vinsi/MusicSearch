@@ -24,6 +24,7 @@ final class DetailCoordinator: Coordinator {
 
     func start() {
         viewController.viewModel.search = param
+        viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
 }
